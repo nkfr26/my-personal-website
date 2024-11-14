@@ -29,7 +29,7 @@ export function Header() {
       </div>
 
       <div
-        className={`absolute top-full grid h-[calc(100svh-100%)] w-full place-content-center bg-background pb-9 transition duration-300 ${
+        className={`absolute top-full grid h-[calc(100svh-100%)] w-full place-content-center bg-background pb-12 transition duration-300 ${
           isOpen
             ? "pointer-events-auto opacity-100"
             : "pointer-events-none opacity-0"
