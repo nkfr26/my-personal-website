@@ -16,7 +16,7 @@ export default function RootLayout({
     <html
       lang="ja"
       className={lf.variable}
-      style={{ scrollbarGutter: "stable" }}
+      style={{ scrollbarGutter: "stable", textDecorationSkipInk: "none" }}
     >
       <body className="grid min-h-svh grid-rows-[auto_1fr] pb-12 font-mono">
         <Header />
