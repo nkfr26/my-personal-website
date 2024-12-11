@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 import { Header } from "@/components/header";
+import { Suspense } from "react";
 
 const udev_gothic_35 = localFont({
   src: [
@@ -43,10 +44,12 @@ export default function RootLayout({
     <html
       lang="ja"
       className={udev_gothic_35.variable}
-      style={{ scrollbarGutter: "stable" }}
+      style={{ scrollbarGutter: "stable", textDecorationSkipInk: "none" }}
     >
       <body className="grid min-h-dvh grid-rows-[auto_1fr] pb-12 font-mono">
-        <Header />
+        <Suspense>
+          <Header />
+        </Suspense>
         {children}
       </body>
     </html>

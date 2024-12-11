@@ -4,11 +4,14 @@ import { Drawer } from "@/components/drawer";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { House, Menu, X } from "lucide-react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const searchParams = useSearchParams();
+  const isError = searchParams.get("error") === "true";
 
+  const [isOpen, setIsOpen] = useState(isError);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -35,7 +38,7 @@ export function Header() {
             : "pointer-events-none opacity-0"
         }`}
       >
-        <Drawer />
+        <Drawer isError={isError} />
       </div>
     </header>
   );
