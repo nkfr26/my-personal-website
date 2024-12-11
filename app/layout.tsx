@@ -1,6 +1,33 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import localFont from "next/font/local";
 import { Header } from "@/components/header";
+
+const udev_gothic_35 = localFont({
+  src: [
+    {
+      path: "./fonts/UDEVGothic35-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/UDEVGothic35-Italic.ttf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "./fonts/UDEVGothic35-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/UDEVGothic35-BoldItalic.ttf",
+      weight: "700",
+      style: "italic",
+    },
+  ],
+  variable: "--font-udev-gothic-35",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +40,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" style={{ scrollbarGutter: "stable" }}>
+    <html
+      lang="ja"
+      className={udev_gothic_35.variable}
+      style={{ scrollbarGutter: "stable" }}
+    >
       <body className="grid min-h-dvh grid-rows-[auto_1fr] pb-12 font-mono">
         <Header />
         {children}
