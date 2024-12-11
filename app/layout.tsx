@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Header } from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" style={{ scrollbarGutter: "stable" }}>
-      <body className="grid min-h-dvh grid-rows-1 font-mono">{children}</body>
+      <body className="grid min-h-dvh grid-rows-[auto_1fr] pb-12 font-mono">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
