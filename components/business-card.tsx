@@ -1,16 +1,16 @@
 import Link from "next/link";
 
 export function BusinessCard() {
+  const link =
+    "border-current text-lg text-blue-700 hover:text-blue-400 dark:text-blue-300 dark:hover:text-blue-500";
+
   return (
     <div className="inline-grid grid-cols-[auto_auto_auto_auto]">
-      <Link
-        href="/about"
-        className="border-b border-current text-lg text-blue-700 hover:text-blue-400"
-      >
+      <Link href="/about" className={`border-b ${link}`}>
         me
       </Link>
       <span />
-      <span className="group col-span-2 cursor-pointer border-b border-current text-lg text-blue-700 hover:text-blue-400">
+      <span className={`group col-span-2 cursor-pointer border-b ${link}`}>
         <span className="group-hover:hidden">website</span>
         <span className="hidden group-hover:inline">here</span>
       </span>
@@ -23,7 +23,7 @@ export function BusinessCard() {
       <span />
       <Link
         href="https://x.com/nkfr26"
-        className="col-span-2 border-t border-current text-lg text-blue-700 hover:text-blue-400"
+        className={`col-span-2 border-t ${link}`}
         target="_blank"
         rel="noreferrer"
       >
@@ -31,10 +31,7 @@ export function BusinessCard() {
       </Link>
       <span />
 
-      <Link
-        href="/contact"
-        className="col-span-4 border-t border-current text-lg text-blue-700 hover:text-blue-400"
-      >
+      <Link href="/contact" className={`col-span-4 border-t ${link}`}>
         email
       </Link>
     </div>

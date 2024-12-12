@@ -5,10 +5,12 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import {
   HomeIcon,
   MarkGithubIcon,
-  // SunIcon,
+  MoonIcon,
+  SunIcon,
   ThreeBarsIcon,
   XIcon,
 } from "@primer/octicons-react";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
@@ -20,6 +22,11 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(isError);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const { resolvedTheme, setTheme } = useTheme();
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === "light" ? "dark" : "light");
   };
 
   return (
@@ -40,9 +47,9 @@ export function Header() {
         >
           <MarkGithubIcon />
         </Link>
-        {/* <Button variant="ghost" size="icon">
-          <SunIcon />
-        </Button> */}
+        <Button variant="ghost" size="icon" onClick={toggleTheme}>
+          {resolvedTheme === "light" ? <SunIcon /> : <MoonIcon />}
+        </Button>
         <Button variant="ghost" size="icon" onClick={toggleMenu}>
           {isOpen ? <XIcon /> : <ThreeBarsIcon />}
         </Button>

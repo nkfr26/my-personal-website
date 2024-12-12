@@ -2,14 +2,20 @@ import Link from "next/link";
 
 export function Menu({ isError }: { isError: boolean }) {
   const underline = isError
-    ? "underline decoration-red-600 decoration-wavy decoration-1 underline-offset-4"
+    ? "underline decoration-red-600 decoration-wavy decoration-1 underline-offset-4 dark:decoration-red-500"
     : "";
 
   return (
     <nav className="text-xl sm:flex">
-      <span className="text-red-600 after:content-['\00A0']">const</span>
-      <span className="text-sky-700 after:content-['\00A0']">menu</span>
-      <span className="text-red-600 after:content-['\00A0']">=</span>
+      <span className="text-red-600 after:content-['\00A0'] dark:text-red-400">
+        const
+      </span>
+      <span className="text-sky-700 after:content-['\00A0'] dark:text-sky-300">
+        menu
+      </span>
+      <span className="text-red-600 after:content-['\00A0'] dark:text-red-400">
+        =
+      </span>
       <span>[</span>
 
       <ul className="sm:flex">
