@@ -1,15 +1,19 @@
 import Link from "next/link";
 
 export function Menu({ isError }: { isError: boolean }) {
+  // #e51400, #f14c4c (TS Playground)
   const underline = isError
     ? "underline decoration-red-600 decoration-wavy decoration-1 underline-offset-4 dark:decoration-red-500"
     : "";
 
   return (
     <nav className="text-xl sm:flex">
+      {/* GitHub Light Default, GitHub Dark Default */}
+      {/* #cf222e, #ff7b72 */}
       <span className="text-red-600 after:content-['\00A0'] dark:text-red-400">
         const
       </span>
+      {/* #0550ae, #79c0ff */}
       <span className="text-sky-700 after:content-['\00A0'] dark:text-sky-300">
         menu
       </span>

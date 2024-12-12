@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 export function BusinessCard() {
+  // #1558d6, #99c3ff (Google)
   const link =
     "border-current text-lg text-blue-700 hover:text-blue-400 dark:text-blue-300 dark:hover:text-blue-500";
 
