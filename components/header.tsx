@@ -1,8 +1,14 @@
 "use client";
 
-import { Drawer } from "@/components/drawer";
+import { Menu } from "@/components/menu";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { House, Menu, X } from "lucide-react";
+import {
+  HomeIcon,
+  MarkGithubIcon,
+  // SunIcon,
+  ThreeBarsIcon,
+  XIcon,
+} from "@primer/octicons-react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
@@ -24,10 +30,21 @@ export function Header() {
           className={buttonVariants({ variant: "ghost", size: "icon" })}
           onClick={isOpen ? toggleMenu : () => {}}
         >
-          <House />
+          <HomeIcon />
         </Link>
+        <Link
+          href="https://github.com/nkfr26/my-personal-website"
+          className={buttonVariants({ variant: "ghost", size: "icon" })}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <MarkGithubIcon />
+        </Link>
+        {/* <Button variant="ghost" size="icon">
+          <SunIcon />
+        </Button> */}
         <Button variant="ghost" size="icon" onClick={toggleMenu}>
-          {isOpen ? <X /> : <Menu />}
+          {isOpen ? <XIcon /> : <ThreeBarsIcon />}
         </Button>
       </div>
 
@@ -38,7 +55,7 @@ export function Header() {
             : "pointer-events-none opacity-0"
         }`}
       >
-        <Drawer isError={isError} />
+        <Menu isError={isError} />
       </div>
     </header>
   );

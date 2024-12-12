@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export function Drawer({ isError }: { isError: boolean }) {
+export function Menu({ isError }: { isError: boolean }) {
   const underline = isError
     ? "underline decoration-red-600 decoration-wavy decoration-1 underline-offset-4"
     : "";
