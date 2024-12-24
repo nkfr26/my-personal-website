@@ -70,3 +70,10 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  /* #141b39: blue-975 */
+  .bg-glow {
+    @apply bg-[radial-gradient(circle,var(--tw-gradient-stops))] bg-origin-content from-[#141b39] via-background;
+  }
+}

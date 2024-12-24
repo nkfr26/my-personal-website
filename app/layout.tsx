@@ -52,7 +52,7 @@ export default function RootLayout({
       className={udev_gothic_35.variable}
       style={{ scrollbarGutter: "stable", textDecorationSkipInk: "none" }}
     >
-      <body className="grid min-h-dvh grid-rows-[auto_1fr] pb-12 font-mono">
+      <body className="grid min-h-dvh grid-rows-[auto_1fr] font-mono">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
