@@ -24,25 +24,46 @@ export function Menu({ isError }: { isError: boolean }) {
 
       <ul className="sm:flex">
         <li className="before:content-['\00A0\00A0'] after:content-[',\00A0'] sm:before:content-none">
-          <Link to="/" className={cn('hover:text-muted-foreground', underline)}>
+          <Link
+            to="/"
+            className={cn(
+              'focus:text-muted-foreground md:hover:text-muted-foreground',
+              underline,
+            )}
+          >
             about
           </Link>
         </li>
         <li className="before:content-['\00A0\00A0'] after:content-[',\00A0'] sm:before:content-none">
-          <Link to="/" className={cn('hover:text-muted-foreground', underline)}>
+          <Link
+            to="/"
+            className={cn(
+              'focus:text-muted-foreground md:hover:text-muted-foreground',
+              underline,
+            )}
+          >
             blog
           </Link>
         </li>
         <li className="before:content-['\00A0\00A0'] after:content-[',\00A0'] sm:before:content-none">
           <a
             href="mailto:nokky@nkfr26.com"
-            className={cn('hover:text-muted-foreground', underline)}
+            className={cn(
+              'focus:text-muted-foreground md:hover:text-muted-foreground',
+              underline,
+            )}
           >
             contact
           </a>
         </li>
         <li className="before:content-['\00A0\00A0'] after:content-[','] sm:before:content-none sm:after:content-none">
-          <Link to="/" className={cn('hover:text-muted-foreground', underline)}>
+          <Link
+            to="/"
+            className={cn(
+              'focus:text-muted-foreground md:hover:text-muted-foreground',
+              underline,
+            )}
+          >
             projects
           </Link>
         </li>

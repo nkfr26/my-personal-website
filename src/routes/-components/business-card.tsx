@@ -2,7 +2,7 @@ import { Link } from '@tanstack/react-router'
 import { cn } from '@/lib/utils'
 
 const LINK_CLASS_NAME = cn(
-  'border-current text-lg text-blue-700 hover:text-blue-400 dark:text-blue-300 dark:hover:text-blue-500',
+  'border-current text-lg text-blue-700 focus:text-blue-400 md:hover:text-blue-400 dark:text-blue-300 dark:focus:text-blue-500 dark:md:hover:text-blue-500',
 )
 
 export function BusinessCard() {
@@ -12,9 +12,16 @@ export function BusinessCard() {
         me
       </Link>
       <span />
-      <span className={cn('group col-span-2 border-b', LINK_CLASS_NAME)}>
-        <span className="group-hover:hidden">website</span>
-        <span className="hidden group-hover:inline">here</span>
+      <span
+        tabIndex={0}
+        className={cn('group col-span-2 border-b', LINK_CLASS_NAME)}
+      >
+        <span className="group-focus:hidden md:group-hover:hidden">
+          website
+        </span>
+        <span className="hidden group-focus:inline md:group-hover:inline">
+          here
+        </span>
       </span>
 
       <span className="text-2xl">nokky</span>
