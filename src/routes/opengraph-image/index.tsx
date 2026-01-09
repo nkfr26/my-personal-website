@@ -7,7 +7,7 @@ export const Route = createFileRoute('/opengraph-image/')({
     handlers: {
       GET: async ({ request }) => {
         const fontData = await fetch(
-          new URL('/fonts/UDEVGothic35-Regular.ttf', request.url),
+          new URL('/fonts/UDEVGothic35-Regular.woff2', request.url),
         ).then((r) => r.arrayBuffer())
         return new ImageResponse(
           <div
