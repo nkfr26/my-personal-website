@@ -26,6 +26,7 @@ export function Header() {
           to="/"
           className={buttonVariants({ variant: 'ghost', size: 'icon' })}
           onClick={isOpen ? toggleMenu : undefined}
+          aria-label="Home"
         >
           <HomeIcon />
         </Link>
@@ -34,11 +35,17 @@ export function Header() {
           className={buttonVariants({ variant: 'ghost', size: 'icon' })}
           target="_blank"
           rel="noreferrer"
+          aria-label="GitHub Repository"
         >
           <MarkGithubIcon />
         </a>
-        <ThemeButton />
-        <Button variant="ghost" size="icon" onClick={toggleMenu}>
+        <ThemeButton aria-label="Toggle Theme" />
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={toggleMenu}
+          aria-label="Toggle Menu"
+        >
           {isOpen ? <XIcon /> : <ThreeBarsIcon />}
         </Button>
       </div>
