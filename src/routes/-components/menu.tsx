@@ -9,7 +9,7 @@ const ERROR_UNDERLINE_CLASS = cn(
 export function Menu({ isError }: { isError: boolean }) {
   const underline = cn(isError && ERROR_UNDERLINE_CLASS)
   return (
-    <nav className="text-xl sm:flex">
+    <nav className="text-xl select-none sm:flex">
       {/* GitHub Light Default, GitHub Dark Default */}
       <span className="text-[#cf222e] after:content-['\00A0'] dark:text-[#ff7b72]">
         const

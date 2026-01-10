@@ -7,7 +7,7 @@ const LINK_CLASS_NAME = cn(
 
 export function BusinessCard() {
   return (
-    <div className="inline-grid grid-cols-[auto_auto_auto_auto]">
+    <div className="inline-grid grid-cols-[auto_auto_auto_auto] select-none">
       <Link to="/" className={cn('border-b', LINK_CLASS_NAME)}>
         me
       </Link>

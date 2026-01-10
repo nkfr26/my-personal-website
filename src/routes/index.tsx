@@ -7,7 +7,7 @@ export const Route = createFileRoute('/')({
 
 function App() {
   return (
-    <main className="grid place-content-center pb-12 select-none">
+    <main className="grid place-content-center pb-12">
       <BusinessCard />
     </main>
   )
