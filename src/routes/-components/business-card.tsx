@@ -34,7 +34,7 @@ export function BusinessCard() {
         href="https://x.com/nkfr26"
         className={cn('col-span-2 border-t', LINK_CLASS_NAME)}
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
       >
         x
       </a>

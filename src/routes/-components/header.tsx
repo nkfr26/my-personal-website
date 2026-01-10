@@ -8,7 +8,7 @@ import {
 import { parseAsBoolean, useQueryState } from 'nuqs'
 import { useState } from 'react'
 import { Menu } from '@/routes/-components/menu'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { ThemeButton } from '@/routes/-components/theme-button'
 
@@ -22,23 +22,33 @@ export function Header() {
   return (
     <header className="sticky top-0 z-[calc(infinity)] flex h-12 shrink-0 items-center border-b border-foreground bg-background">
       <div className="container mx-auto flex justify-end pr-2">
-        <Link
-          to="/"
-          className={buttonVariants({ variant: 'ghost', size: 'icon' })}
-          onClick={isOpen ? toggleMenu : undefined}
-          aria-label="Home"
-        >
-          <HomeIcon />
-        </Link>
-        <a
-          href="https://github.com/nkfr26/my-personal-website"
-          className={buttonVariants({ variant: 'ghost', size: 'icon' })}
-          target="_blank"
-          rel="noreferrer"
-          aria-label="GitHub Repository"
-        >
-          <MarkGithubIcon />
-        </a>
+        <Button
+          size="icon"
+          variant="ghost"
+          render={
+            <Link
+              to="/"
+              onClick={isOpen ? toggleMenu : undefined}
+              aria-label="Home"
+            >
+              <HomeIcon />
+            </Link>
+          }
+        />
+        <Button
+          size="icon"
+          variant="ghost"
+          render={
+            <a
+              href="https://github.com/nkfr26/my-personal-website"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub Repository"
+            >
+              <MarkGithubIcon />
+            </a>
+          }
+        />
         <ThemeButton aria-label="Toggle Theme" />
         <Button
           variant="ghost"
