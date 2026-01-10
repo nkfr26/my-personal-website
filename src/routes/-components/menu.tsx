@@ -27,7 +27,7 @@ export function Menu({ isError }: { isError: boolean }) {
           <Link
             to="/"
             className={cn(
-              'focus:text-muted-foreground md:hover:text-muted-foreground',
+              'focus:text-muted-foreground sm:hover:text-muted-foreground',
               underline,
             )}
           >
@@ -38,7 +38,7 @@ export function Menu({ isError }: { isError: boolean }) {
           <Link
             to="/"
             className={cn(
-              'focus:text-muted-foreground md:hover:text-muted-foreground',
+              'focus:text-muted-foreground sm:hover:text-muted-foreground',
               underline,
             )}
           >
@@ -49,7 +49,7 @@ export function Menu({ isError }: { isError: boolean }) {
           <a
             href="mailto:nokky@nkfr26.com"
             className={cn(
-              'focus:text-muted-foreground md:hover:text-muted-foreground',
+              'focus:text-muted-foreground sm:hover:text-muted-foreground',
               underline,
             )}
           >
@@ -60,7 +60,7 @@ export function Menu({ isError }: { isError: boolean }) {
           <Link
             to="/"
             className={cn(
-              'focus:text-muted-foreground md:hover:text-muted-foreground',
+              'focus:text-muted-foreground sm:hover:text-muted-foreground',
               underline,
             )}
           >
