@@ -25,6 +25,7 @@ export function Header() {
         <Button
           size="icon"
           variant="ghost"
+          nativeButton={false}
           render={
             <Link
               to="/"
@@ -38,6 +39,7 @@ export function Header() {
         <Button
           size="icon"
           variant="ghost"
+          nativeButton={false}
           render={
             <a
               href="https://github.com/nkfr26/my-personal-website"
