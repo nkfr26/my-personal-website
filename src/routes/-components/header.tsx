@@ -52,7 +52,7 @@ export function Header() {
 
       <div
         className={cn(
-          'absolute top-12 grid h-[calc(100svh-100%)] w-full place-content-center bg-background pb-12 transition duration-300',
+          'absolute top-12 grid h-[calc(100svh-48px)] w-full place-content-center bg-background pb-12 transition duration-300',
           isOpen
             ? 'pointer-events-auto opacity-100'
             : 'pointer-events-none opacity-0',
