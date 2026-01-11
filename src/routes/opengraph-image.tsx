@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { ImageResponse } from '@vercel/og'
 import { cn } from '@/lib/utils'
 
-export const Route = createFileRoute('/opengraph-image/')({
+export const Route = createFileRoute('/opengraph-image')({
   server: {
     handlers: {
       GET: async ({ request }) => {

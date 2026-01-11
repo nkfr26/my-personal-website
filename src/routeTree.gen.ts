@@ -9,48 +9,55 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as OpengraphImageRouteImport } from './routes/opengraph-image'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as OpengraphImageIndexRouteImport } from './routes/opengraph-image/index'
 
+const OpengraphImageRoute = OpengraphImageRouteImport.update({
+  id: '/opengraph-image',
+  path: '/opengraph-image',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OpengraphImageIndexRoute = OpengraphImageIndexRouteImport.update({
-  id: '/opengraph-image/',
-  path: '/opengraph-image/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/opengraph-image': typeof OpengraphImageIndexRoute
+  '/opengraph-image': typeof OpengraphImageRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/opengraph-image': typeof OpengraphImageIndexRoute
+  '/opengraph-image': typeof OpengraphImageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/opengraph-image/': typeof OpengraphImageIndexRoute
+  '/opengraph-image': typeof OpengraphImageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths: '/' | '/opengraph-image'
   fileRoutesByTo: FileRoutesByTo
   to: '/' | '/opengraph-image'
-  id: '__root__' | '/' | '/opengraph-image/'
+  id: '__root__' | '/' | '/opengraph-image'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  OpengraphImageIndexRoute: typeof OpengraphImageIndexRoute
+  OpengraphImageRoute: typeof OpengraphImageRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/opengraph-image': {
+      id: '/opengraph-image'
+      path: '/opengraph-image'
+      fullPath: '/opengraph-image'
+      preLoaderRoute: typeof OpengraphImageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -58,19 +65,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/opengraph-image/': {
-      id: '/opengraph-image/'
-      path: '/opengraph-image'
-      fullPath: '/opengraph-image'
-      preLoaderRoute: typeof OpengraphImageIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  OpengraphImageIndexRoute: OpengraphImageIndexRoute,
+  OpengraphImageRoute: OpengraphImageRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
