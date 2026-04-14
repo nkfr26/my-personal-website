@@ -3,7 +3,7 @@ import { createServerFn } from '@tanstack/react-start'
 import { renderServerComponent } from '@tanstack/react-start/rsc'
 import { BusinessCard } from './-components/business-card'
 
-const getMain = createServerFn().handler(async () => {
+const getMain = createServerFn().handler(() => {
   return renderServerComponent(
     <main className="grid place-content-center pb-12">
       <BusinessCard />
