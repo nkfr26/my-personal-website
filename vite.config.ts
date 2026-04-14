@@ -24,6 +24,9 @@ const config = defineConfig({
     rsc(),
     viteReact(),
   ],
+  ssr: {
+    external: ['@vercel/og'],
+  },
 })
 
 export default config
